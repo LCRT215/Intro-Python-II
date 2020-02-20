@@ -57,10 +57,30 @@ def newPlayer():
 
 
 player = newPlayer()
-move = player.move()
+# ^ store player class in player vairable to be used below
 
 
 def movePlayer(player):
+    print(f'{player.current_room}')
+
+    playersMove = player.move()
+    # ^ passed players move through player class
+
+    moveDirection = ""
+    # ^ save players selected move direction here
+    while moveDirection not in playersMove.keys():
+        moveDirection = input(
+            '\n\nWhich way would you like to go?\n\nn - North\ns - South\ne - East\nw - West\n\n \n\nType Here==>   ')
+# move commands
+        if moveDirection == 'n':
+            player.current_room = player.current_room.n_to
+        if moveDirection == 's':
+            player.current_room = player.current_room.s_to
+        if moveDirection == 'e':
+            player.current_room = player.current_room.e_to
+        if moveDirection == 'w':
+            player.current_room = player.current_room.w_to
+
     print(f'{player.current_room}')
 
 
