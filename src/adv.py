@@ -1,5 +1,5 @@
-from room import Room #getting the room object from Room 
-from player import Player #getting the player object form Player
+from room import Room  # getting the room object from Room
+from player import Player  # getting the player object form Player
 
 # Declare all the rooms
 
@@ -59,3 +59,8 @@ def newPlayer():
 player = newPlayer()
 
 
+def movePlayer(player):
+    print(f'{player.current_room}')
+
+
+movePlayer(player)
