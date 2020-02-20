@@ -57,6 +57,7 @@ def newPlayer():
 
 
 player = newPlayer()
+move = player.move()
 
 
 def movePlayer(player):
