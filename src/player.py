@@ -17,10 +17,10 @@ class Player:
             direction['n'] = self.current_room.n_to.name
 
         if hasattr(self.current_room, 's_to'):
-            direction['s'] = self.current_room.e_to.name
+            direction['s'] = self.current_room.s_to.name
 
         if hasattr(self.current_room, 'e_to'):
-            direction['e'] = self.current_room.s_to.name
+            direction['e'] = self.current_room.e_to.name
 
         if hasattr(self.current_room, 'w_to'):
             direction['w'] = self.current_room.w_to.name

@@ -91,7 +91,9 @@ def movePlayer(player):
             # ^ AttributeError can be defined as an error that is raised when an attribute reference or assignment fails
             print(stop)
         # print(f'{player.current_room}')
-        return (movePlayer(player))
+        # return (movePlayer(player))
 
 
-movePlayer(player)
+play = ""
+while play is not 'dont_play':
+    movePlayer(player)
