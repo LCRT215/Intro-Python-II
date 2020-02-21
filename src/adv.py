@@ -64,21 +64,26 @@ player = newPlayer()
 def movePlayer(player):
     print(f'{player.current_room}')
 
-    playersMove = player.move()
+    # playersMove = player.move()
     # ^ passed players move through player class
 
     stop = "=========== 🚫 Oh No!!! You can't go that way! Make another move 🚫 ============"
 
     moveDirection = ""
+    
+    play = True
+    #use this variable to 
 
     # wannaMove = input(
     #         '\n\nWhich way would you like to go?\n\nn - North\ns - South\ne - East\nw - West\n\n \n\nType Here==>   ')
 
     # ^ save players selected move direction here
-    while moveDirection not in playersMove.keys():
+    while play:
         moveDirection = input(
             '\n\nWhich way would you like to go?\n\nn - North\ns - South\ne - East\nw - West\n\n \n\nType Here==>   ')
-        if moveDirection == 'stop':
+        
+        if moveDirection == 'q':
+            play = False
             print('======= 👋 You have exited the game. See ya later! 👋 =======')
             sys.exit()
 
@@ -95,10 +100,7 @@ def movePlayer(player):
         except AttributeError:
             # ^ AttributeError can be defined as an error that is raised when an attribute reference or assignment fails
             print(stop)
-        # print(f'{player.current_room}')
+        print(f'{player.current_room}')
         # return (movePlayer(player))
 
-
-play = ""
-while play is not 'stop':
-    movePlayer(player)
+movePlayer(player)
