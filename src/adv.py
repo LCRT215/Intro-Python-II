@@ -1,4 +1,5 @@
 from room import Room  # getting the room object from Room
+# Read as: from the file named room, import the Room Class (this is assuming they are in the same directory)
 from player import Player  # getting the player object form Player
 import sys  # to be able to exit the game
 
@@ -55,6 +56,7 @@ room['treasure'].s_to = room['narrow']
 
 def newPlayer():
     return Player(current_room=room['outside'])
+# ^ create new instance of a player
 
 
 player = newPlayer()
@@ -70,18 +72,15 @@ def movePlayer(player):
     stop = "=========== 🚫 Oh No!!! You can't go that way! Make another move 🚫 ============"
 
     moveDirection = ""
-    
-    play = True
-    #use this variable to 
 
-    # wannaMove = input(
-    #         '\n\nWhich way would you like to go?\n\nn - North\ns - South\ne - East\nw - West\n\n \n\nType Here==>   ')
+    play = True
+    # use this variable to control
 
     # ^ save players selected move direction here
     while play:
         moveDirection = input(
             '\n\nWhich way would you like to go?\n\nn - North\ns - South\ne - East\nw - West\n\n \n\nType Here==>   ')
-        
+
         if moveDirection == 'q':
             play = False
             print('======= 👋 You have exited the game. See ya later! 👋 =======')
@@ -102,5 +101,6 @@ def movePlayer(player):
             print(stop)
         print(f'{player.current_room}')
         # return (movePlayer(player))
+
 
 movePlayer(player)
